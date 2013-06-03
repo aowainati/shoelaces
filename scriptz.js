@@ -51,7 +51,7 @@ $(document).ready(function () {
                                             0, 0,
                                             "img/smb-bg.jpg"));
         game_state.addObject(new Megaman(CANVAS_X_MID, CANVAS_Y_MID));
-        game_state.addObject(new Met(CANVAS_X_MID - 30, CANVAS_Y_MID - 30));
+        game_state.addObject(new Met(CANVAS_X_MID + 7, CANVAS_Y_MID - 17));
     }
 
     /**
@@ -182,10 +182,10 @@ $(document).ready(function () {
     }
 
     Sprite.prototype.render = function (ctx) {
-        // TODO : remove this debug rectangle
+/*        // TODO : remove this debug rectangle
         ctx.strokeStyle = "red";
         ctx.strokeRect(this.x - 1, this.y - 1,
-                       this.w + 2, this.h + 2);
+                       this.w + 2, this.h + 2); */
 
         if (this.ready) {
             ctx.drawImage(this.img_obj,
@@ -277,7 +277,7 @@ $(document).ready(function () {
     Met.prototype.constructor = Met;
 
     Met.prototype.update = function (delta, keys_down) {
-        this.anim_seq_num += .5;
+        this.anim_seq_num += .4;
         var cur_loop = this.animations[this.anim_state];
         var anim_coords = cur_loop[(Math.floor(this.anim_seq_num)) % cur_loop.length];
         this.w = anim_coords["w"]; this.h = anim_coords["h"];
