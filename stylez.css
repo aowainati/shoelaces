@@ -1,0 +1,14 @@
+body {
+    font-family: Helvetica, Arial;
+    color: #505050;
+}
+
+#the_wrapper {
+    text-align: center;
+}
+
+#the_game {
+    border: 2px solid #000000;
+    background-color: #606060;
+}
+
